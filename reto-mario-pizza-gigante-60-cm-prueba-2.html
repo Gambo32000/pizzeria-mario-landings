@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="¿Te atreves con el desafío definitivo? Pizza gigante de 60 cm con todos los ingredientes que quieras. 30 minutos para terminarla. Si lo logras es GRATIS y tu foto va al muro de la fama.">
+    <meta property="og:title" content="Reto Mario — Pizza Gigante 60 cm prueba 2 — Pizzería Mario">
+    <meta property="og:description" content="¿Te atreves con el desafío definitivo? Pizza gigante de 60 cm con todos los ingredientes que quieras. 30 minutos para terminarla. Si lo logras es GRATIS y tu foto va al muro de la fama.">
+    <title>Reto Mario — Pizza Gigante 60 cm prueba 2 — Pizzería Mario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface2: #1c1c1c;
+            --red: #c0392b;
+            --red-bright: #e63946;
+            --gold: #d4a851;
+            --gold-light: #f0c876;
+            --white: #f5f0ea;
+            --gray: #888;
+            --gray-light: #bbb;
+            --nav-h: 68px;
+            /* Tweak transitions */
+            --tweak-transition: background 0.6s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* ── AMBIENTE: Rosso ── */
+        body.ambiente-rosso {
+            --bg: #0d0404;
+            --surface: #160808;
+            --surface2: #200c0c;
+            --red: #b52020;
+            --red-bright: #e02030;
+            --gold: #c47830;
+            --gold-light: #e09050;
+            --white: #fff0ec;
+            --gray: #997070;
+            --gray-light: #cc9090;
+        }
+        body.ambiente-rosso .hero {
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, #2a0808 0%, var(--bg) 70%);
+        }
+        body.ambiente-rosso .hero-glow-1 { background: rgba(176,32,32,0.28); }
+        body.ambiente-rosso .hero-glow-2 { background: rgba(196,120,48,0.14); }
+
+        /* ── AMBIENTE: Ceniza ── */
+        body.ambiente-ceniza {
+            --bg: #0c0c0e;
+            --surface: #151518;
+            --surface2: #1e1e22;
+            --red: #7a6baa;
+            --red-bright: #9988cc;
+            --gold: #aaaaaa;
+            --gold-light: #cccccc;
+            --white: #eeeeee;
+            --gray: #777788;
+            --gray-light: #aaaabc;
+        }
+        body.ambiente-ceniza .hero {
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, #141420 0%, var(--bg) 70%);
+        }
+        body.ambiente-ceniza .hero-glow-1 { background: rgba(100,90,170,0.18); }
+        body.ambiente-ceniza .hero-glow-2 { background: rgba(140,140,180,0.10); }
+        body.ambiente-ceniza .urgency-section {
+            background: linear-gradient(135deg, #0e0e18 0%, #0a0a12 50%, #0c0c18 100%);
+            border-top-color: rgba(150,140,200,0.2);
+        }
+        body.ambiente-ceniza .urgency-section::before {
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100,90,160,0.12), transparent 70%);
+        }
+
+        /* ── PRESIÓN: Suave — dim urgency elements ── */
+        body.presion-suave .countdown-bar { display: none; }
+        body.presion-suave .urgency-indicator { opacity: 0 !important; }
+        body.presion-suave .spots-remaining { opacity: 0 !important; }
+        body.presion-suave .urgency-badge { opacity: 0.4; }
+        body.presion-suave .pulse-dot { animation: none; }
+        body.presion-suave .pulse-ring { animation: none; opacity: 0; }
+        body.presion-suave div[style*="ticker"] { display: none; }
+        /* hide ticker */
+        body.presion-suave .ticker-outer { display: none; }
+
+        /* ── PRESIÓN: Máxima — amplify everything ── */
+        body.presion-maxima .pulse-dot { animation-duration: 0.9s; }
+        body.presion-maxima .pulse-ring { animation-duration: 0.9s; }
+        body.presion-maxima .ticker-track { animation-duration: 12s; }
+        body.presion-maxima .countdown-num {
+            color: var(--red-bright);
+            text-shadow: 0 0 30px rgba(230,57,70,0.8), 0 0 60px rgba(230,57,70,0.4);
+        }
+        body.presion-maxima .urgency-section {
+            animation: urgency-pulse 3s ease-in-out infinite;
+        }
+        @keyframes urgency-pulse {
+            0%, 100% { background: linear-gradient(135deg,#1a0505 0%,#0d0505 50%,#100505 100%); }
+            50%       { background: linear-gradient(135deg,#240808 0%,#160606 50%,#180606 100%); }
+        }
+        /* sticky bottom CTA */
+        body.presion-maxima #sticky-cta { display: flex !important; }
+
+        /* ── TIPOGRAFÍA: Clásico ── */
+        body.tipo-clasico .hero h1 {
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+        }
+        body.tipo-clasico .section-title { font-weight: 400; line-height: 1.3; }
+        body.tipo-clasico .btn { font-family: 'Merriweather', serif; letter-spacing: 0.04em; font-size: 0.78rem; }
+        body.tipo-clasico .logo { font-family: 'Merriweather', serif; font-weight: 400; font-style: italic; }
+        body.tipo-clasico .hero-desc { font-size: 1.1rem; color: rgba(245,240,234,0.7); }
+        body.tipo-clasico .section-tag { font-family: 'Merriweather', serif; font-style: italic; text-transform: none; letter-spacing: 0.05em; }
+
+        /* ── TIPOGRAFÍA: Moderno ── */
+        body.tipo-moderno .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            letter-spacing: -0.02em;
+            line-height: 1.0;
+            text-transform: uppercase;
+        }
+        body.tipo-moderno .hero h1 em { font-style: normal; }
+        body.tipo-moderno .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+        body.tipo-moderno .section-title em { font-style: normal; }
+        body.tipo-moderno .hero-desc { font-family: 'Oswald', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; line-height: 1.6; }
+        body.tipo-moderno .why-desc { font-family: 'Oswald', sans-serif; letter-spacing: 0.04em; }
+        body.tipo-moderno .testimonial-text { font-style: normal; font-family: 'Oswald', sans-serif; letter-spacing: 0.03em; }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ─── SCROLLBAR ─── */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 99px; }
+
+        /* ─── FADE-IN ANIMATION ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes shimmer {
+            0%   { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50%       { transform: scale(1.6); opacity: 0.4; }
+        }
+        @keyframes pulse-ring {
+            0%   { transform: scale(0.9); opacity: 1; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50%      { transform: translateY(-8px); }
+        }
+        @keyframes grain {
+            0%,100% { transform: translate(0,0); }
+            10%      { transform: translate(-2%,-3%); }
+            30%      { transform: translate(3%,-1%); }
+            50%      { transform: translate(-1%, 2%); }
+            70%      { transform: translate(2%, 1%); }
+            90%      { transform: translate(-3%, 3%); }
+        }
+
+        /* ─── SCROLL REVEAL ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-behavior(.16,1,.3,1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ─── NAV ─── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2.5rem;
+            height: var(--nav-h);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+            border-bottom: 1px solid transparent;
+        }
+        nav.scrolled {
+            background: rgba(10,10,10,0.88);
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border-bottom-color: rgba(255,255,255,0.06);
+        }
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+            text-shadow: 0 0 24px rgba(212,168,81,0.35);
+        }
+        .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+        .nav-links a {
+            color: rgba(245,240,234,0.55);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - var(--nav-h));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 2rem 6rem;
+            overflow: hidden;
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a0a07 0%, var(--bg) 70%);
+        }
+
+        /* Noise grain overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            width: 200%; height: 200%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            animation: grain 8s steps(10) infinite;
+            pointer-events: none;
+        }
+
+        /* Radial lines pattern */
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 79px,
+                    rgba(255,255,255,0.018) 80px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 79px,
+                    rgba(255,255,255,0.018) 80px
+                );
+            pointer-events: none;
+        }
+
+        /* Glow blobs */
+        .hero-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .hero-glow-1 {
+            width: 500px; height: 300px;
+            background: rgba(192,57,43,0.18);
+            top: 10%; left: 50%;
+            transform: translateX(-50%);
+        }
+        .hero-glow-2 {
+            width: 300px; height: 300px;
+            background: rgba(212,168,81,0.10);
+            bottom: 15%; right: 15%;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 1.8rem;
+            padding: 0.35rem 1rem;
+            border: 1px solid rgba(230,57,70,0.3);
+            border-radius: 2px;
+            background: rgba(230,57,70,0.06);
+            animation: fadeIn 1.2s ease both;
+            animation-delay: 0.1s;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2.6rem, 6.5vw, 5rem);
+            font-weight: 300;
+            line-height: 1.12;
+            margin-bottom: 1.8rem;
+            max-width: 820px;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.8), 0 0 80px rgba(192,57,43,0.15);
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+            animation-delay: 0.15s;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(212,168,81,0.4);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(245,240,234,0.6);
+            max-width: 520px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+            animation-delay: 0.25s;
+        }
+
+        .price-display {
+            font-size: clamp(3.5rem, 8vw, 5.5rem);
+            font-weight: 700;
+            color: var(--red-bright);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 0 60px rgba(230,57,70,0.5);
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+            animation-delay: 0.3s;
+        }
+
+        .price-sub {
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+            animation-delay: 0.35s;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both;
+            animation-delay: 0.42s;
+        }
+
+        /* Urgency pulse indicator */
+        .urgency-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            animation: fadeIn 1s ease both;
+            animation-delay: 0.6s;
+        }
+        .pulse-wrapper {
+            position: relative;
+            width: 10px; height: 10px;
+            flex-shrink: 0;
+        }
+        .pulse-dot {
+            position: absolute;
+            inset: 0;
+            background: var(--red-bright);
+            border-radius: 50%;
+            animation: pulse-dot 1.8s ease-in-out infinite;
+        }
+        .pulse-ring {
+            position: absolute;
+            inset: 0;
+            border: 1.5px solid var(--red-bright);
+            border-radius: 50%;
+            animation: pulse-ring 1.8s ease-out infinite;
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0.3;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        .scroll-hint svg { width: 16px; opacity: 0.6; }
+
+        /* ─── BUTTONS ─── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 2.4rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(.34,1.56,.64,1),
+                        box-shadow 0.3s ease,
+                        color 0.25s ease;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+            background-size: 200% auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-3px) scale(1.02); }
+        .btn:hover::after {
+            opacity: 1;
+            animation: shimmer 0.7s linear;
+        }
+        .btn:active { transform: translateY(-1px) scale(0.99); }
+
+        /* Primary */
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+            box-shadow: 0 4px 24px rgba(192,57,43,0.35);
+        }
+        .btn-primary:hover {
+            background: var(--red-bright);
+            box-shadow: 0 8px 40px rgba(230,57,70,0.55), 0 0 0 1px rgba(230,57,70,0.3);
+        }
+
+        /* Gold */
+        .btn-gold {
+            background: var(--gold);
+            color: #0a0a0a;
+            box-shadow: 0 4px 24px rgba(212,168,81,0.3);
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            box-shadow: 0 8px 40px rgba(240,200,118,0.5), 0 0 0 1px rgba(240,200,118,0.3);
+        }
+
+        /* Outline */
+        .btn-outline {
+            background: transparent;
+            color: var(--red-bright);
+            border: 1px solid rgba(230,57,70,0.5);
+            box-shadow: inset 0 0 0 0 var(--red);
+        }
+        .btn-outline:hover {
+            background: rgba(230,57,70,0.08);
+            border-color: var(--red-bright);
+            color: var(--white);
+            box-shadow: 0 4px 24px rgba(230,57,70,0.2);
+        }
+
+        /* ─── SECTIONS COMMON ─── */
+        section { padding: 6rem 2rem; }
+        .section-inner { max-width: 880px; margin: 0 auto; }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(230,57,70,0.25);
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .section-title em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* Section divider */
+        .divider {
+            width: 40px; height: 2px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            margin: 1.5rem 0 2.5rem;
+            border-radius: 2px;
+        }
+
+        /* ─── COUNTDOWN ─── */
+        .countdown-bar {
+            background: linear-gradient(135deg, #1a0a07 0%, #0f0f0f 100%);
+            border-top: 1px solid rgba(192,57,43,0.2);
+            border-bottom: 1px solid rgba(192,57,43,0.2);
+            padding: 1.4rem 2rem;
+            text-align: center;
+        }
+        .countdown-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .countdown-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+        .countdown-units {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 52px;
+        }
+        .countdown-num {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--red-bright);
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 0 20px rgba(230,57,70,0.4);
+        }
+        .countdown-unit-label {
+            font-size: 0.58rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-top: 0.2rem;
+        }
+        .countdown-sep {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: rgba(230,57,70,0.4);
+            margin-bottom: 10px;
+        }
+
+        /* ─── DETAILS ─── */
+        .details { background: var(--surface); }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            margin-top: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 6px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .detail-card {
+            background: var(--bg);
+            padding: 2rem 1.5rem;
+            position: relative;
+            transition: background 0.3s ease, box-shadow 0.4s ease;
+            cursor: default;
+        }
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            border-radius: 0;
+            transition: border-color 0.3s ease;
+            pointer-events: none;
+        }
+        .detail-card:hover {
+            background: var(--surface2);
+            box-shadow: 0 0 40px rgba(212,168,81,0.08) inset;
+        }
+        .detail-card:hover::before {
+            border-color: rgba(212,168,81,0.15);
+        }
+
+        .detail-card-icon {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .detail-card-label {
+            font-size: 0.64rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        .detail-card-value {
+            font-size: 1rem;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        /* ─── CONDITIONS ─── */
+        .conditions { border-top: 1px solid rgba(255,255,255,0.04); }
+
+        .conditions-box {
+            background: var(--surface);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-left: 2px solid var(--gold);
+            border-radius: 4px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .conditions-box::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            right: 1.5rem;
+            font-family: 'Merriweather', serif;
+            font-size: 8rem;
+            color: rgba(212,168,81,0.06);
+            line-height: 1;
+            pointer-events: none;
+        }
+        .conditions-box p {
+            color: rgba(245,240,234,0.65);
+            line-height: 1.85;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        /* ─── WHY ─── */
+        .why { background: var(--surface); }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--bg);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(.34,1.56,.64,1),
+                        box-shadow 0.4s ease,
+                        border-color 0.4s ease;
+        }
+        .why-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .why-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,168,81,0.15), 0 0 40px rgba(212,168,81,0.05) inset;
+            border-color: rgba(212,168,81,0.2);
+        }
+        .why-item:hover::before { opacity: 1; }
+
+        .why-icon {
+            width: 56px; height: 56px;
+            background: rgba(192,57,43,0.12);
+            border: 1px solid rgba(192,57,43,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .why-item:hover .why-icon {
+            background: rgba(192,57,43,0.22);
+            box-shadow: 0 0 24px rgba(192,57,43,0.3);
+        }
+
+        .why-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .why-desc {
+            font-size: 0.82rem;
+            color: var(--gray);
+            line-height: 1.7;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+        }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials { border-top: 1px solid rgba(255,255,255,0.04); }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 6px;
+            padding: 2rem 1.8rem;
+            position: relative;
+            transition: transform 0.35s cubic-bezier(.34,1.56,.64,1),
+                        box-shadow 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,168,81,0.12);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 0.82rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-text {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-size: 0.88rem;
+            color: rgba(245,240,234,0.6);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        .testimonial-author {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-light);
+        }
+
+        /* ─── URGENCY CTA ─── */
+        .urgency-section {
+            background: linear-gradient(135deg, #1a0505 0%, #0d0505 50%, #100505 100%);
+            border-top: 1px solid rgba(192,57,43,0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .urgency-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(192,57,43,0.12), transparent 70%);
+            pointer-events: none;
+        }
+        .urgency-section .section-inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(192,57,43,0.15);
+            border: 1px solid rgba(230,57,70,0.3);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .urgency-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 30px rgba(0,0,0,0.6);
+        }
+
+        .urgency-section p {
+            color: rgba(245,240,234,0.6);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .urgency-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+        /* Limited spots row */
+        .spots-remaining {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(245,240,234,0.45);
+        }
+
+        /* ─── FOTOS ─── */
+        .foto-section {
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            background: var(--bg);
+        }
+        .foto-frame {
+            max-width: 860px;
+            width: 100%;
+            border: 1px solid rgba(212,168,81,0.25);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 0 0 4px rgba(212,168,81,0.06), 0 20px 60px rgba(0,0,0,0.6);
+            position: relative;
+        }
+        .foto-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212,168,81,0.1);
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .foto-frame-interior {
+            max-width: 680px;
+            margin: 2rem auto;
+        }
+        .foto-img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.9) contrast(1.05);
+            transition: filter 0.4s ease;
+        }
+        .foto-frame:hover .foto-img { filter: brightness(1) contrast(1.05); }
+        .foto-caption {
+            background: rgba(10,10,10,0.9);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray);
+            text-align: center;
+            border-top: 1px solid rgba(212,168,81,0.15);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 3.5rem 2rem 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.06em;
+        }
+        .footer-tagline {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        .footer-info {
+            font-size: 0.78rem;
+            color: rgba(136,136,136,0.7);
+            line-height: 2;
+        }
+        .footer-divider {
+            width: 30px; height: 1px;
+            background: rgba(212,168,81,0.3);
+            margin: 1.5rem auto;
+        }
+        .footer-legal {
+            font-size: 0.68rem;
+            color: rgba(136,136,136,0.4);
+            letter-spacing: 0.08em;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            section { padding: 4.5rem 1.5rem; }
+            .hero { padding: 3rem 1.5rem 4rem; }
+            .countdown-inner { gap: 1rem; }
+            .conditions-box { padding: 1.8rem; }
+        }
+        @media (max-width: 480px) {
+            .hero { min-height: 90vh; }
+            .hero h1 { font-size: 2.2rem; }
+            .price-display { font-size: 3rem; }
+            .btn { padding: 0.85rem 1.8rem; font-size: 0.78rem; }
+            .details-grid { grid-template-columns: 1fr 1fr; }
+            .countdown-num { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+    <div class="logo">Pizzería Mario</div>
+    <ul class="nav-links">
+        <li><a href="#detalles">Detalles</a></li>
+        <li><a href="#condiciones">Condiciones</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="hero-inner">
+        <span class="hero-tag">Pizzería Mario — Alhama de Murcia</span>
+        <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--red-bright);margin-bottom:1rem;letter-spacing:0.03em;">La experiencia que no puedes perderte</p>
+        <h1>Reto Mario — Pizza Gigante 60 cm prueba 2</h1>
+        <p class="hero-desc">¿Te atreves con el desafío definitivo? Pizza gigante de 60 cm con todos los ingredientes que quieras. 30 minutos para terminarla. Si lo logras es GRATIS y tu foto va al muro de la fama.</p>
+        <div class="price-display">35€</div>
+        <p class="price-sub">gratis si lo terminas</p>
+        <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gray-light);margin-bottom:1.8rem;letter-spacing:0.02em;">Miles de clientes ya lo han probado. Tú eres el siguiente.</p>
+        <div class="hero-btns">
+            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot">¡Pedir Ahora!</a>
+            <a class="btn btn-outline" href="#detalles">Ver detalles</a>
+        </div>
+        <div class="urgency-indicator">
+            <div class="pulse-wrapper">
+                <div class="pulse-ring"></div>
+                <div class="pulse-dot"></div>
+            </div>
+            Solo quedan <strong style="color:var(--white);">&nbsp;9 plazas&nbsp;</strong> disponibles
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+        Descubrir
+    </div>
+</div>
+
+<!-- STICKY CTA (Presión Máxima only) -->
+<div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:linear-gradient(90deg,var(--red) 0%,#9b1a10 100%);padding:0.8rem 2rem;align-items:center;justify-content:center;gap:1.5rem;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 -8px 40px rgba(192,57,43,0.5);">
+    <span style="font-family:'Merriweather',serif;font-style:italic;font-size:0.88rem;color:rgba(255,255,255,0.85);">¿Todavía dudando? Las plazas se agotan ahora mismo.</span>
+    <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot" style="padding:0.6rem 1.6rem;font-size:0.78rem;">¡Reservar Ya!</a>
+</div>
+
+<!-- TICKER BANNER -->
+<div class="ticker-outer" style="overflow:hidden;background:#0f0f0f;border-top:1px solid rgba(192,57,43,0.18);border-bottom:1px solid rgba(192,57,43,0.18);padding:0.6rem 0;white-space:nowrap;">
+    <style>
+        @keyframes ticker { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+        .ticker-track { display:inline-flex; animation:ticker 22s linear infinite; will-change:transform; }
+        .ticker-item { font-family:'Merriweather',serif; font-style:italic; font-size:0.82rem; color:rgba(245,240,234,0.5); letter-spacing:0.06em; padding:0 2.5rem; }
+        .ticker-sep { color:var(--gold); margin:0 1rem; }
+    </style>
+    <div class="ticker-track" aria-hidden="true">
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+    </div>
+</div>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar" id="countdown-bar">
+    <div class="countdown-inner">
+        <span class="countdown-label">La oferta termina en</span>
+        <div class="countdown-units">
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-days">00</span>
+                <span class="countdown-unit-label">días</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-hours">00</span>
+                <span class="countdown-unit-label">horas</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-mins">00</span>
+                <span class="countdown-unit-label">min</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-secs">00</span>
+                <span class="countdown-unit-label">seg</span>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot" style="font-size:0.74rem;padding:0.6rem 1.4rem;">Reservar</a>
+    </div>
+</div>
+
+<!-- FOTO ENTRADA -->
+<div class="foto-section reveal">
+    <div class="foto-frame">
+        <img src="https://gambo32000.github.io/pizzeria-mario-landings/fotoentrada.png" alt="Entrada Pizzería Mario" class="foto-img">
+        <div class="foto-caption">Calle Larga, Alhama de Murcia · Te esperamos cada día de 13:00 a 23:00</div>
+    </div>
+</div>
+
+<!-- DETALLES -->
+<section class="details" id="detalles">
+    <div class="section-inner">
+        <span class="section-tag reveal">El evento</span>
+        <h2 class="section-title reveal reveal-delay-1">Todo lo que necesitas <em>saber</em></h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-2" style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gray-light);margin-bottom:1.5rem;margin-top:-1rem;">Cada detalle ha sido pensado para que disfrutes al máximo</p>
+        <div class="details-grid">
+            <div class="detail-card reveal reveal-delay-1">
+                <span class="detail-card-icon">📅</span>
+                <div class="detail-card-label">Duración</div>
+                <div class="detail-card-value">Cada último viernes del mes</div>
+            </div>
+            <div class="detail-card reveal reveal-delay-2">
+                <span class="detail-card-icon">💶</span>
+                <div class="detail-card-label">Precio</div>
+                <div class="detail-card-value">35€ gratis si lo terminas</div>
+            </div>
+            <div class="detail-card reveal reveal-delay-3">
+                <span class="detail-card-icon">📍</span>
+                <div class="detail-card-label">Ubicación</div>
+                <div class="detail-card-value">Calle Larga, Alhama de Murcia</div>
+            </div>
+            <div class="detail-card reveal reveal-delay-4">
+                <span class="detail-card-icon">🕐</span>
+                <div class="detail-card-label">Horario</div>
+                <div class="detail-card-value">13:00 – 23:00 todos los días</div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:3rem;" class="reveal">
+            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Mesa!</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONDICIONES -->
+<section class="conditions" id="condiciones">
+    <div class="section-inner">
+        <span class="section-tag reveal">Importante</span>
+        <h2 class="section-title reveal reveal-delay-1">Condiciones <em>especiales</em></h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <div class="conditions-box reveal reveal-delay-2">
+            <p>Reserva obligatoria. Solo una persona por intento. Sin ayuda externa.</p>
+        </div>
+        <div style="text-align:center; margin-top:2rem;" class="reveal reveal-delay-3">
+            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot">Hablar con Mario</a>
+        </div>
+    </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="why" id="nosotros">
+    <div class="section-inner">
+        <span class="section-tag reveal">Por qué elegirnos</span>
+        <h2 class="section-title reveal reveal-delay-1">La mejor pizza italiana en <em>Alhama</em></h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <div class="why-grid">
+            <div class="why-item reveal reveal-delay-1">
+                <div class="why-icon">🍕</div>
+                <div class="why-title">Calidad artesanal</div>
+                <div class="why-desc">Ingredientes frescos y masa elaborada cada día. Auténtica receta italiana.</div>
+            </div>
+            <div class="why-item reveal reveal-delay-2">
+                <div class="why-icon">🚚</div>
+                <div class="why-title">Entrega gratuita</div>
+                <div class="why-desc">Delivery gratis en Alhama de Murcia. En 15-40 minutos en tu puerta.</div>
+            </div>
+            <div class="why-item reveal reveal-delay-3">
+                <div class="why-icon">🕐</div>
+                <div class="why-title">Abiertos cada día</div>
+                <div class="why-desc">De 13:00 a 23:00 todos los días del año. Sin excepciones.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials">
+    <div class="section-inner">
+        <span class="section-tag reveal">Lo que dicen nuestros clientes</span>
+        <h2 class="section-title reveal reveal-delay-1">Más de <em>500 familias</em> ya confían en nosotros</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal reveal-delay-1">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"La mejor pizza que he probado fuera de Italia. El ambiente es increíble y el servicio impecable."</p>
+                <div class="testimonial-author">María G. — Cliente habitual</div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-2">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Reservé para una ocasión especial y superó todas mis expectativas. Totalmente recomendable."</p>
+                <div class="testimonial-author">Carlos M. — Alhama de Murcia</div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-3">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Pedido por Telegram en 2 minutos y la pizza llegó perfecta en 20 minutos. ¡Alucinante!"</p>
+                <div class="testimonial-author">Laura P. — Cliente frecuente</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- URGENCY CTA -->
+<section class="urgency-section" id="contacto">
+    <div class="section-inner">
+        <span class="urgency-badge reveal">
+            <div class="pulse-wrapper" style="width:8px;height:8px;">
+                <div class="pulse-ring"></div>
+                <div class="pulse-dot"></div>
+            </div>
+            ⚡ Plazas limitadas
+        </span>
+        <h2 class="reveal reveal-delay-1">¡No te quedes sin tu mesa!</h2>
+        <p class="reveal reveal-delay-2">Reserva ahora a través de nuestro bot de Telegram. Es rápido, fácil y gratuito. Solo quedan algunas plazas disponibles.</p>
+        <p class="reveal reveal-delay-2" style="font-family:'Merriweather',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--gold);margin-bottom:1.5rem;margin-top:-0.5rem;text-shadow:0 0 30px rgba(212,168,81,0.3);">¿Vas a dejar que otro ocupe tu sitio?</p>
+        <div class="foto-frame foto-frame-interior reveal reveal-delay-2">
+            <img src="https://gambo32000.github.io/pizzeria-mario-landings/fotodedentro.png" alt="Interior Pizzería Mario" class="foto-img">
+        </div>
+        <div class="urgency-btns reveal reveal-delay-3">
+            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Ahora!</a>
+            <a class="btn btn-outline" href="https://t.me/asistente_de_restaurante_bot">Hablar con Mario</a>
+        </div>
+        <div class="spots-remaining reveal reveal-delay-4">
+            <div class="pulse-wrapper" style="width:8px;height:8px;">
+                <div class="pulse-ring"></div>
+                <div class="pulse-dot"></div>
+            </div>
+            9 personas están mirando esta página ahora mismo
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">Pizzería Mario</div>
+    <p class="footer-tagline">Auténtica pizza italiana en el corazón de Alhama</p>
+    <p class="footer-info">
+        Calle Larga, Alhama de Murcia<br>
+        Abierto todos los días · 13:00 – 23:00<br>
+        Delivery gratuito en Alhama de Murcia
+    </p>
+    <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gold);margin-bottom:1rem;opacity:0.75;">La mejor decisión que tomarás hoy</p>
+    <div class="footer-divider"></div>
+    <p class="footer-legal">© 2025 Pizzería Mario · Todos los derechos reservados</p>
+</footer>
+
+<script>
+    /* ── Sticky nav ── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── Smooth scroll with nav offset ── */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const id = link.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
+
+    /* ── Intersection Observer: scroll reveal ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    /* ── Countdown Timer ── */
+    (function() {
+        // Set your deadline here — ISO date string
+        const DEADLINE = new Date('{{EVENT_DEADLINE_ISO}}');
+        const fallback = new Date();
+        fallback.setDate(fallback.getDate() + 3); // default: 3 days from now
+
+        const target = isNaN(DEADLINE.getTime()) ? fallback : DEADLINE;
+
+        const pad = n => String(n).padStart(2, '0');
+
+        function tick() {
+            const now = Date.now();
+            let diff = Math.max(0, target - now);
+
+            const days  = Math.floor(diff / 86400000); diff -= days * 86400000;
+            const hours = Math.floor(diff / 3600000);  diff -= hours * 3600000;
+            const mins  = Math.floor(diff / 60000);    diff -= mins * 60000;
+            const secs  = Math.floor(diff / 1000);
+
+            document.getElementById('cd-days').textContent  = pad(days);
+            document.getElementById('cd-hours').textContent = pad(hours);
+            document.getElementById('cd-mins').textContent  = pad(mins);
+            document.getElementById('cd-secs').textContent  = pad(secs);
+        }
+
+        tick();
+        setInterval(tick, 1000);
+    })();
+
+    /* ── Subtle parallax on hero ── */
+    const hero = document.querySelector('.hero');
+    const heroGlow1 = document.querySelector('.hero-glow-1');
+    const heroGlow2 = document.querySelector('.hero-glow-2');
+
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+            hero.style.setProperty('--scroll-y', y + 'px');
+            if (heroGlow1) heroGlow1.style.transform = `translateX(-50%) translateY(${y * 0.25}px)`;
+            if (heroGlow2) heroGlow2.style.transform = `translateY(${y * 0.15}px)`;
+        }
+    }, { passive: true });
+
+    /* ── Hero inner parallax ── */
+    const heroInner = document.querySelector('.hero-inner');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < window.innerHeight) {
+            heroInner.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+            heroInner.style.opacity = 1 - (window.scrollY / (window.innerHeight * 0.7));
+        }
+    }, { passive: true });
+</script>
+<!-- TWEAKS PANEL -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<div id="tweaks-root"></div>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "ambiente": "rosso",
+  "presion": "maxima",
+  "tipografia": "impacto"
+}/*EDITMODE-END*/;
+
+function applyTweaks(t) {
+  const body = document.body;
+
+  // Ambiente
+  body.classList.remove('ambiente-rosso', 'ambiente-ceniza');
+  if (t.ambiente === 'rosso')  body.classList.add('ambiente-rosso');
+  if (t.ambiente === 'ceniza') body.classList.add('ambiente-ceniza');
+
+  // Presión
+  body.classList.remove('presion-suave', 'presion-maxima');
+  if (t.presion === 'suave')  body.classList.add('presion-suave');
+  if (t.presion === 'maxima') body.classList.add('presion-maxima');
+
+  // Tipografía
+  body.classList.remove('tipo-clasico', 'tipo-moderno');
+  if (t.tipografia === 'clasico') body.classList.add('tipo-clasico');
+  if (t.tipografia === 'moderno') body.classList.add('tipo-moderno');
+}
+
+function TweaksApp() {
+  const [t, setTweak] = window.useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => { applyTweaks(t); }, [t]);
+
+  return (
+    <window.TweaksPanel title="Tweaks">
+      <window.TweakSection label="Ambiente" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Paleta y atmósfera general
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['oscuro','rosso','ceniza']}
+        value={t.ambiente}
+        onChange={v => setTweak('ambiente', v)}
+      />
+
+      <window.TweakSection label="Presión de Venta" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Intensidad de urgencia y conversión
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['suave','equilibrado','maxima']}
+        value={t.presion}
+        onChange={v => setTweak('presion', v)}
+      />
+
+      <window.TweakSection label="Voz Tipográfica" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Carácter y ritmo del texto
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['clasico','impacto','moderno']}
+        value={t.tipografia}
+        onChange={v => setTweak('tipografia', v)}
+      />
+    </window.TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+
+</body>
+</html>
