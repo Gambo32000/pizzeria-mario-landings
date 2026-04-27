@@ -1086,7 +1086,7 @@
 <!-- FOTO ENTRADA -->
 <div class="foto-section reveal">
     <div class="foto-frame">
-        <img src="https://raw.githubusercontent.com/Gambo32000/pizzeria-mario-landings/main/fotoentrada.png" alt="Entrada Pizzería Mario" class="foto-img">
+        <img src="https://gambo32000.github.io/pizzeria-mario-landings/fotoentrada.png" alt="Entrada Pizzería Mario" class="foto-img">
         <div class="foto-caption">Calle Larga, Alhama de Murcia · Te esperamos cada día de 13:00 a 23:00</div>
     </div>
 </div>
@@ -1207,7 +1207,7 @@
         <p class="reveal reveal-delay-2">Reserva ahora a través de nuestro bot de Telegram. Es rápido, fácil y gratuito. Solo quedan algunas plazas disponibles.</p>
         <p class="reveal reveal-delay-2" style="font-family:'Merriweather',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--gold);margin-bottom:1.5rem;margin-top:-0.5rem;text-shadow:0 0 30px rgba(212,168,81,0.3);">¿Vas a dejar que otro ocupe tu sitio?</p>
         <div class="foto-frame foto-frame-interior reveal reveal-delay-2">
-            <img src="https://raw.githubusercontent.com/Gambo32000/pizzeria-mario-landings/main/fotodedentro.png" alt="Interior Pizzería Mario" class="foto-img">
+            <img src="https://gambo32000.github.io/pizzeria-mario-landings/fotodedentro.png" alt="Interior Pizzería Mario" class="foto-img">
         </div>
         <div class="urgency-btns reveal reveal-delay-3">
             <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Ahora!</a>
