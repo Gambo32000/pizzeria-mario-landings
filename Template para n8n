@@ -23,7 +23,116 @@
             --gray: #888;
             --gray-light: #bbb;
             --nav-h: 68px;
+            /* Tweak transitions */
+            --tweak-transition: background 0.6s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
+
+        /* ── AMBIENTE: Rosso ── */
+        body.ambiente-rosso {
+            --bg: #0d0404;
+            --surface: #160808;
+            --surface2: #200c0c;
+            --red: #b52020;
+            --red-bright: #e02030;
+            --gold: #c47830;
+            --gold-light: #e09050;
+            --white: #fff0ec;
+            --gray: #997070;
+            --gray-light: #cc9090;
+        }
+        body.ambiente-rosso .hero {
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, #2a0808 0%, var(--bg) 70%);
+        }
+        body.ambiente-rosso .hero-glow-1 { background: rgba(176,32,32,0.28); }
+        body.ambiente-rosso .hero-glow-2 { background: rgba(196,120,48,0.14); }
+
+        /* ── AMBIENTE: Ceniza ── */
+        body.ambiente-ceniza {
+            --bg: #0c0c0e;
+            --surface: #151518;
+            --surface2: #1e1e22;
+            --red: #7a6baa;
+            --red-bright: #9988cc;
+            --gold: #aaaaaa;
+            --gold-light: #cccccc;
+            --white: #eeeeee;
+            --gray: #777788;
+            --gray-light: #aaaabc;
+        }
+        body.ambiente-ceniza .hero {
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, #141420 0%, var(--bg) 70%);
+        }
+        body.ambiente-ceniza .hero-glow-1 { background: rgba(100,90,170,0.18); }
+        body.ambiente-ceniza .hero-glow-2 { background: rgba(140,140,180,0.10); }
+        body.ambiente-ceniza .urgency-section {
+            background: linear-gradient(135deg, #0e0e18 0%, #0a0a12 50%, #0c0c18 100%);
+            border-top-color: rgba(150,140,200,0.2);
+        }
+        body.ambiente-ceniza .urgency-section::before {
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100,90,160,0.12), transparent 70%);
+        }
+
+        /* ── PRESIÓN: Suave — dim urgency elements ── */
+        body.presion-suave .countdown-bar { display: none; }
+        body.presion-suave .urgency-indicator { opacity: 0 !important; }
+        body.presion-suave .spots-remaining { opacity: 0 !important; }
+        body.presion-suave .urgency-badge { opacity: 0.4; }
+        body.presion-suave .pulse-dot { animation: none; }
+        body.presion-suave .pulse-ring { animation: none; opacity: 0; }
+        body.presion-suave div[style*="ticker"] { display: none; }
+        /* hide ticker */
+        body.presion-suave .ticker-outer { display: none; }
+
+        /* ── PRESIÓN: Máxima — amplify everything ── */
+        body.presion-maxima .pulse-dot { animation-duration: 0.9s; }
+        body.presion-maxima .pulse-ring { animation-duration: 0.9s; }
+        body.presion-maxima .ticker-track { animation-duration: 12s; }
+        body.presion-maxima .countdown-num {
+            color: var(--red-bright);
+            text-shadow: 0 0 30px rgba(230,57,70,0.8), 0 0 60px rgba(230,57,70,0.4);
+        }
+        body.presion-maxima .urgency-section {
+            animation: urgency-pulse 3s ease-in-out infinite;
+        }
+        @keyframes urgency-pulse {
+            0%, 100% { background: linear-gradient(135deg,#1a0505 0%,#0d0505 50%,#100505 100%); }
+            50%       { background: linear-gradient(135deg,#240808 0%,#160606 50%,#180606 100%); }
+        }
+        /* sticky bottom CTA */
+        body.presion-maxima #sticky-cta { display: flex !important; }
+
+        /* ── TIPOGRAFÍA: Clásico ── */
+        body.tipo-clasico .hero h1 {
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+        }
+        body.tipo-clasico .section-title { font-weight: 400; line-height: 1.3; }
+        body.tipo-clasico .btn { font-family: 'Merriweather', serif; letter-spacing: 0.04em; font-size: 0.78rem; }
+        body.tipo-clasico .logo { font-family: 'Merriweather', serif; font-weight: 400; font-style: italic; }
+        body.tipo-clasico .hero-desc { font-size: 1.1rem; color: rgba(245,240,234,0.7); }
+        body.tipo-clasico .section-tag { font-family: 'Merriweather', serif; font-style: italic; text-transform: none; letter-spacing: 0.05em; }
+
+        /* ── TIPOGRAFÍA: Moderno ── */
+        body.tipo-moderno .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            letter-spacing: -0.02em;
+            line-height: 1.0;
+            text-transform: uppercase;
+        }
+        body.tipo-moderno .hero h1 em { font-style: normal; }
+        body.tipo-moderno .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+        body.tipo-moderno .section-title em { font-style: normal; }
+        body.tipo-moderno .hero-desc { font-family: 'Oswald', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; line-height: 1.6; }
+        body.tipo-moderno .why-desc { font-family: 'Oswald', sans-serif; letter-spacing: 0.04em; }
+        body.tipo-moderno .testimonial-text { font-style: normal; font-family: 'Oswald', sans-serif; letter-spacing: 0.03em; }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -287,7 +396,6 @@
         .urgency-indicator {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.6rem;
             margin-top: 2.5rem;
             font-size: 0.75rem;
@@ -410,7 +518,7 @@
 
         /* ─── SECTIONS COMMON ─── */
         section { padding: 6rem 2rem; }
-        .section-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+        .section-inner { max-width: 880px; margin: 0 auto; }
 
         .section-tag {
             display: inline-block;
@@ -768,12 +876,58 @@
             margin-top: 2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.7rem;
             font-size: 0.72rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: rgba(245,240,234,0.45);
+        }
+
+        /* ─── FOTOS ─── */
+        .foto-section {
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            background: var(--bg);
+        }
+        .foto-frame {
+            max-width: 860px;
+            width: 100%;
+            border: 1px solid rgba(212,168,81,0.25);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 0 0 4px rgba(212,168,81,0.06), 0 20px 60px rgba(0,0,0,0.6);
+            position: relative;
+        }
+        .foto-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212,168,81,0.1);
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .foto-frame-interior {
+            max-width: 680px;
+            margin: 2rem auto;
+        }
+        .foto-img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.9) contrast(1.05);
+            transition: filter 0.4s ease;
+        }
+        .foto-frame:hover .foto-img { filter: brightness(1) contrast(1.05); }
+        .foto-caption {
+            background: rgba(10,10,10,0.9);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray);
+            text-align: center;
+            border-top: 1px solid rgba(212,168,81,0.15);
         }
 
         /* ─── FOOTER ─── */
@@ -851,10 +1005,12 @@
 
     <div class="hero-inner">
         <span class="hero-tag">Pizzería Mario — Alhama de Murcia</span>
+        <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--red-bright);margin-bottom:1rem;letter-spacing:0.03em;">La experiencia que no puedes perderte</p>
         <h1>{{EVENT_NAME_STYLED}}</h1>
         <p class="hero-desc">{{EVENT_DESCRIPTION}}</p>
         <div class="price-display">{{PRICE}}</div>
         <p class="price-sub">{{PRICE_SUBTITLE}}</p>
+        <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gray-light);margin-bottom:1.8rem;letter-spacing:0.02em;">Miles de clientes ya lo han probado. Tú eres el siguiente.</p>
         <div class="hero-btns">
             <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot">¡Pedir Ahora!</a>
             <a class="btn btn-outline" href="#detalles">Ver detalles</a>
@@ -873,6 +1029,28 @@
             <path d="M12 5v14M5 12l7 7 7-7"/>
         </svg>
         Descubrir
+    </div>
+</div>
+
+<!-- STICKY CTA (Presión Máxima only) -->
+<div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:linear-gradient(90deg,var(--red) 0%,#9b1a10 100%);padding:0.8rem 2rem;align-items:center;justify-content:center;gap:1.5rem;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 -8px 40px rgba(192,57,43,0.5);">
+    <span style="font-family:'Merriweather',serif;font-style:italic;font-size:0.88rem;color:rgba(255,255,255,0.85);">¿Todavía dudando? Las plazas se agotan ahora mismo.</span>
+    <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot" style="padding:0.6rem 1.6rem;font-size:0.78rem;">¡Reservar Ya!</a>
+</div>
+
+<!-- TICKER BANNER -->
+<div class="ticker-outer" style="overflow:hidden;background:#0f0f0f;border-top:1px solid rgba(192,57,43,0.18);border-bottom:1px solid rgba(192,57,43,0.18);padding:0.6rem 0;white-space:nowrap;">
+    <style>
+        @keyframes ticker { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+        .ticker-track { display:inline-flex; animation:ticker 22s linear infinite; will-change:transform; }
+        .ticker-item { font-family:'Merriweather',serif; font-style:italic; font-size:0.82rem; color:rgba(245,240,234,0.5); letter-spacing:0.06em; padding:0 2.5rem; }
+        .ticker-sep { color:var(--gold); margin:0 1rem; }
+    </style>
+    <div class="ticker-track" aria-hidden="true">
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
+        <span class="ticker-item">🍕 Reserva ahora <span class="ticker-sep">·</span> Plazas limitadas <span class="ticker-sep">·</span> Solo por tiempo limitado <span class="ticker-sep">·</span> Auténtica pizza italiana <span class="ticker-sep">·</span></span>
     </div>
 </div>
 
@@ -905,12 +1083,21 @@
     </div>
 </div>
 
+<!-- FOTO ENTRADA -->
+<div class="foto-section reveal">
+    <div class="foto-frame">
+        <img src="https://raw.githubusercontent.com/Gambo32000/pizzeria-mario-landings/main/fotoentrada.png" alt="Entrada Pizzería Mario" class="foto-img">
+        <div class="foto-caption">Calle Larga, Alhama de Murcia · Te esperamos cada día de 13:00 a 23:00</div>
+    </div>
+</div>
+
 <!-- DETALLES -->
 <section class="details" id="detalles">
     <div class="section-inner">
         <span class="section-tag reveal">El evento</span>
         <h2 class="section-title reveal reveal-delay-1">Todo lo que necesitas <em>saber</em></h2>
         <div class="divider reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-2" style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gray-light);margin-bottom:1.5rem;margin-top:-1rem;">Cada detalle ha sido pensado para que disfrutes al máximo</p>
         <div class="details-grid">
             <div class="detail-card reveal reveal-delay-1">
                 <span class="detail-card-icon">📅</span>
@@ -1018,6 +1205,10 @@
         </span>
         <h2 class="reveal reveal-delay-1">¡No te quedes sin tu mesa!</h2>
         <p class="reveal reveal-delay-2">Reserva ahora a través de nuestro bot de Telegram. Es rápido, fácil y gratuito. Solo quedan algunas plazas disponibles.</p>
+        <p class="reveal reveal-delay-2" style="font-family:'Merriweather',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--gold);margin-bottom:1.5rem;margin-top:-0.5rem;text-shadow:0 0 30px rgba(212,168,81,0.3);">¿Vas a dejar que otro ocupe tu sitio?</p>
+        <div class="foto-frame foto-frame-interior reveal reveal-delay-2">
+            <img src="https://raw.githubusercontent.com/Gambo32000/pizzeria-mario-landings/main/fotodedentro.png" alt="Interior Pizzería Mario" class="foto-img">
+        </div>
         <div class="urgency-btns reveal reveal-delay-3">
             <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Ahora!</a>
             <a class="btn btn-outline" href="https://t.me/asistente_de_restaurante_bot">Hablar con Mario</a>
@@ -1041,6 +1232,7 @@
         Abierto todos los días · 13:00 – 23:00<br>
         Delivery gratuito en Alhama de Murcia
     </p>
+    <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gold);margin-bottom:1rem;opacity:0.75;">La mejor decisión que tomarás hoy</p>
     <div class="footer-divider"></div>
     <p class="footer-legal">© 2025 Pizzería Mario · Todos los derechos reservados</p>
 </footer>
@@ -1079,10 +1271,12 @@
 
     /* ── Countdown Timer ── */
     (function() {
-        // Fecha aleatoria entre 3 y 15 días desde hoy
-        const randomDays = Math.floor(Math.random() * 13) + 3;
-        const target = new Date();
-        target.setDate(target.getDate() + randomDays);
+        // Set your deadline here — ISO date string
+        const DEADLINE = new Date('{{EVENT_DEADLINE_ISO}}');
+        const fallback = new Date();
+        fallback.setDate(fallback.getDate() + 3); // default: 3 days from now
+
+        const target = isNaN(DEADLINE.getTime()) ? fallback : DEADLINE;
 
         const pad = n => String(n).padStart(2, '0');
 
@@ -1128,5 +1322,84 @@
         }
     }, { passive: true });
 </script>
+<!-- TWEAKS PANEL -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<div id="tweaks-root"></div>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "ambiente": "rosso",
+  "presion": "maxima",
+  "tipografia": "impacto"
+}/*EDITMODE-END*/;
+
+function applyTweaks(t) {
+  const body = document.body;
+
+  // Ambiente
+  body.classList.remove('ambiente-rosso', 'ambiente-ceniza');
+  if (t.ambiente === 'rosso')  body.classList.add('ambiente-rosso');
+  if (t.ambiente === 'ceniza') body.classList.add('ambiente-ceniza');
+
+  // Presión
+  body.classList.remove('presion-suave', 'presion-maxima');
+  if (t.presion === 'suave')  body.classList.add('presion-suave');
+  if (t.presion === 'maxima') body.classList.add('presion-maxima');
+
+  // Tipografía
+  body.classList.remove('tipo-clasico', 'tipo-moderno');
+  if (t.tipografia === 'clasico') body.classList.add('tipo-clasico');
+  if (t.tipografia === 'moderno') body.classList.add('tipo-moderno');
+}
+
+function TweaksApp() {
+  const [t, setTweak] = window.useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => { applyTweaks(t); }, [t]);
+
+  return (
+    <window.TweaksPanel title="Tweaks">
+      <window.TweakSection label="Ambiente" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Paleta y atmósfera general
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['oscuro','rosso','ceniza']}
+        value={t.ambiente}
+        onChange={v => setTweak('ambiente', v)}
+      />
+
+      <window.TweakSection label="Presión de Venta" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Intensidad de urgencia y conversión
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['suave','equilibrado','maxima']}
+        value={t.presion}
+        onChange={v => setTweak('presion', v)}
+      />
+
+      <window.TweakSection label="Voz Tipográfica" />
+      <p style={{fontFamily:"'Merriweather',serif",fontStyle:'italic',fontSize:'0.75rem',color:'#777',marginBottom:'0.8rem',lineHeight:1.5}}>
+        Carácter y ritmo del texto
+      </p>
+      <window.TweakRadio
+        label=""
+        options={['clasico','impacto','moderno']}
+        value={t.tipografia}
+        onChange={v => setTweak('tipografia', v)}
+      />
+    </window.TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+
 </body>
 </html>
