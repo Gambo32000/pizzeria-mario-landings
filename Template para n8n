@@ -409,7 +409,7 @@
 
         /* ─── SECTIONS COMMON ─── */
         section { padding: 6rem 2rem; }
-        .section-inner { max-width: 880px; margin: 0 auto; }
+        .section-inner { max-width: 880px; margin: 0 auto; text-align: center; }
 
         .section-tag {
             display: inline-block;
@@ -1077,12 +1077,10 @@
 
     /* ── Countdown Timer ── */
     (function() {
-        // Set your deadline here — ISO date string
-        const DEADLINE = new Date('{{EVENT_DEADLINE_ISO}}');
-        const fallback = new Date();
-        fallback.setDate(fallback.getDate() + 3); // default: 3 days from now
-
-        const target = isNaN(DEADLINE.getTime()) ? fallback : DEADLINE;
+        // Fecha aleatoria entre 3 y 15 días desde hoy
+        const randomDays = Math.floor(Math.random() * 13) + 3;
+        const target = new Date();
+        target.setDate(target.getDate() + randomDays);
 
         const pad = n => String(n).padStart(2, '0');
 
