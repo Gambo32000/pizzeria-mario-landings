@@ -1020,7 +1020,7 @@
                 <div class="pulse-ring"></div>
                 <div class="pulse-dot"></div>
             </div>
-            Solo quedan <strong style="color:var(--white);">&nbsp;{{SPOTS_LEFT}} plazas&nbsp;</strong> disponibles
+            Solo quedan <strong style="color:var(--white);">&nbsp;¡Últimas existencias!&nbsp;</strong> No esperes más
         </div>
     </div>
 
@@ -1218,7 +1218,7 @@
                 <div class="pulse-ring"></div>
                 <div class="pulse-dot"></div>
             </div>
-            {{SPOTS_LEFT}} personas están mirando esta página ahora mismo
+            ¡Stock muy limitado! Consigue el tuyo antes de que se agote
         </div>
     </div>
 </section>
@@ -1259,24 +1259,23 @@
 
     /* ── Intersection Observer: scroll reveal ── */
     const revealEls = document.querySelectorAll('.reveal');
-    const revealObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => revealObs.observe(el));
+    if (revealEls.length > 0) {
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => revealObs.observe(el));
+    }
 
     /* ── Countdown Timer ── */
     (function() {
-        // Set your deadline here — ISO date string
-        const DEADLINE = new Date('{{EVENT_DEADLINE_ISO}}');
-        const fallback = new Date();
-        fallback.setDate(fallback.getDate() + 3); // default: 3 days from now
-
-        const target = isNaN(DEADLINE.getTime()) ? fallback : DEADLINE;
+        const randomDays = Math.floor(Math.random() * 13) + 3;
+        const target = new Date();
+        target.setDate(target.getDate() + randomDays);
 
         const pad = n => String(n).padStart(2, '0');
 
