@@ -1012,7 +1012,7 @@
         <p class="price-sub">{{PRICE_SUBTITLE}}</p>
         <p style="font-family:'Merriweather',serif;font-style:italic;font-size:0.9rem;color:var(--gray-light);margin-bottom:1.8rem;letter-spacing:0.02em;">Miles de clientes ya lo han probado. Tú eres el siguiente.</p>
         <div class="hero-btns">
-            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot">¡Pedir Ahora!</a>
+            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}">¡Pedir Ahora!</a>
             <a class="btn btn-outline" href="#detalles">Ver detalles</a>
         </div>
         <div class="urgency-indicator">
@@ -1035,7 +1035,7 @@
 <!-- STICKY CTA (Presión Máxima only) -->
 <div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:linear-gradient(90deg,var(--red) 0%,#9b1a10 100%);padding:0.8rem 2rem;align-items:center;justify-content:center;gap:1.5rem;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 -8px 40px rgba(192,57,43,0.5);">
     <span style="font-family:'Merriweather',serif;font-style:italic;font-size:0.88rem;color:rgba(255,255,255,0.85);">¿Todavía dudando? Las plazas se agotan ahora mismo.</span>
-    <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot" style="padding:0.6rem 1.6rem;font-size:0.78rem;">¡Reservar Ya!</a>
+    <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}" style="padding:0.6rem 1.6rem;font-size:0.78rem;">¡Reservar Ya!</a>
 </div>
 
 <!-- TICKER BANNER -->
@@ -1079,7 +1079,7 @@
                 <span class="countdown-unit-label">seg</span>
             </div>
         </div>
-        <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot" style="font-size:0.74rem;padding:0.6rem 1.4rem;">Reservar</a>
+        <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}" style="font-size:0.74rem;padding:0.6rem 1.4rem;">Reservar</a>
     </div>
 </div>
 
@@ -1121,7 +1121,7 @@
             </div>
         </div>
         <div style="text-align:center; margin-top:3rem;" class="reveal">
-            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Mesa!</a>
+            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}">¡Reservar Mesa!</a>
         </div>
     </div>
 </section>
@@ -1136,7 +1136,7 @@
             <p>{{SPECIAL_CONDITIONS}}</p>
         </div>
         <div style="text-align:center; margin-top:2rem;" class="reveal reveal-delay-3">
-            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot">Hablar con Mario</a>
+            <a class="btn btn-primary" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}">Hablar con Mario</a>
         </div>
     </div>
 </section>
@@ -1210,8 +1210,8 @@
             <img src="https://gambo32000.github.io/pizzeria-mario-landings/fotodedentro.png" alt="Interior Pizzería Mario" class="foto-img">
         </div>
         <div class="urgency-btns reveal reveal-delay-3">
-            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot">¡Reservar Ahora!</a>
-            <a class="btn btn-outline" href="https://t.me/asistente_de_restaurante_bot">Hablar con Mario</a>
+            <a class="btn btn-gold" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}">¡Reservar Ahora!</a>
+            <a class="btn btn-outline" href="https://t.me/asistente_de_restaurante_bot?start={{SLUG}}">Hablar con Mario</a>
         </div>
         <div class="spots-remaining reveal reveal-delay-4">
             <div class="pulse-wrapper" style="width:8px;height:8px;">
